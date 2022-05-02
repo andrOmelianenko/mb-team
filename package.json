@@ -1,0 +1,35 @@
+{
+  "name": "mb-team",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrOmelianenko/mb-team.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrOmelianenko/mb-team/issues"
+  },
+  "homepage": "https://github.com/andrOmelianenko/mb-team#readme",
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "next": "^12.1.5",
+    "prop-types": "^15.8.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "eslint": "8.14.0",
+    "eslint-config-next": "12.1.5",
+    "sass": "^1.51.0"
+  }
+}
