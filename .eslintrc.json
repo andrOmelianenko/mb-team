@@ -1,4 +1,9 @@
 {
-  "extends": "next"
+  "extends": "next",
   // expand?
+
+  "rules": {
+    "import/no-anonymous-default-export": "off",
+    "react/display-name": "off"
+  }
 }
