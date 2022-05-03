@@ -1,3 +1,8 @@
-import "../styles/index.sass";
+import { Layout } from '../components';
+import '../styles/index.sass';
 
-export default ({ Component, pageProps }) => <Component {...pageProps} />;
+export default ({ Component, pageProps }) => (
+  <Layout>
+    <Component {...pageProps} />
+  </Layout>
+);
