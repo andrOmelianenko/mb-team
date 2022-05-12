@@ -1,0 +1,18 @@
+@import 'mixins'
+@import 'theme'
+
+.header
+  position: fixed
+  left: 0
+  top: 0
+  display: flex
+  justify-content: space-between
+  height: 48px
+  width: 100%
+  transition: background-color .3s
+
+  +mq($from: desktop)
+    height: 72px
+
+.bg
+  background-color: $white
