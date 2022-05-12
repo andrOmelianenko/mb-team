@@ -1,4 +1,4 @@
-import { Contact } from '../../components';
+import { Button, Contact } from '../../components';
 import intl from '../../intl'; // temp.
 
 export default () => {
@@ -7,7 +7,7 @@ export default () => {
   return (
     <section>
       {intl.contribute_title}
-      <button>{intl.paypal_cta}</button>
+      <Button>{intl.paypal_cta}</Button>
       <Contact />
     </section>
   );
