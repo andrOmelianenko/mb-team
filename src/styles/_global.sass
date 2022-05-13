@@ -2,7 +2,15 @@
 @import 'mixins'
 
 *
+  font-family: 'cera-pro', sans-serif
+  margin: 0
+  padding: 0
   box-sizing: border-box
+  border: 0
+  border-radius: 0
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-size-adjust: none
 
 body
   min-width: 320px
@@ -11,13 +19,15 @@ body
   height: 4000px
 
 .container
+  box-sizing: content-box
   margin: 0 auto
   max-width: 1024px
   padding: 56px 20px
   +mq($from: desktop)
-    padding: 72px 0
+    padding: 72px 20px
 
 // that gray line between sections
 .divider
   height: 1px
   // ...
+

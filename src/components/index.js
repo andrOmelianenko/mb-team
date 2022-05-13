@@ -6,3 +6,4 @@ export { default as Contact } from './contact';
 export { default as Socials } from './socials';
 export { default as Lang } from './lang';
 export { default as Slider } from './slider';
+export { default as Typography } from './typography';

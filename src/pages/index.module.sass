@@ -1,16 +1,53 @@
+@import theme
+@import 'mixins'
+  
 .main
   height: 100vh
   display: flex
   flex-direction: column
   align-items: center
   justify-content: center
-  background-image: url('/mb-team/images/bg.jpg') // temp. added mb-team
+  background-image: url('/images/bg.jpg') // temp. added mb-team
   background-repeat: no-repeat
   background-size: cover
   background-position: center
 
 .sub_0
-  display: flex
+  &_header
+    margin-bottom: 48px
+    +mq($from: desktop)
+      margin-bottom: 65px
+
+  &_content_block
+    display: grid
+    grid-template-columns: 1fr
+    grid-row-gap: 44px
+    +mq($from: desktop)
+      padding: 0 50px
+      display: grid
+      grid-template-columns: 1fr 1fr 1fr
+      grid-gap: 155px
+
+  &_content_item_image_wrapper
+    position: relative
+    border-radius: 50%
+    margin-bottom: 32px
+    display: flex
+    background-color: rgba($primary, 0.4)
+    width: 100%
+    padding: 22%
+    align-items: center
+
+  &_content_item_image_wrapper_resizer
+    padding-bottom: 100%
+
+  &_content_item_image
+    width: 65%
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+  
 
 .sub_1
   display: flex
