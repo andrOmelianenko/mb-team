@@ -1,4 +1,5 @@
 @import theme
+@import 'mixins'
   
 .main
   height: 100vh
@@ -11,44 +12,42 @@
   background-size: cover
   background-position: center
 
-.money_reason_wrapper
-  padding: 72px
-
-.money_reason_header
-  margin-bottom: 65px
-
-.money_reason_content_block
-  max-width: 1024px
-  margin: 0 auto
-  display: grid
-  grid-template-columns: 1fr 1fr 1fr
-  grid-gap: 155px
-
-.money_reason_content_item_image_wrapper
-  position: relative
-  border-radius: 50%
-  margin-bottom: 32px
-  display: flex
-  background-color: rgba($primary, 0.4)
-  width: 100%
-  padding: 22%
-  display: flex
-  align-items: center
-
-.image_resizer
-  padding-bottom: 100%
-
-.money_reason_content_item_image
-  width: 65%
-  position: absolute
-  top: 50%
-  left: 50%
-  transform: translate(-50%, -50%)
-  
-
-
 .sub_0
-  display: flex
+  &_header
+    margin-bottom: 48px
+    +mq($from: desktop)
+      margin-bottom: 65px
+
+  &_content_block
+    display: grid
+    grid-template-columns: 1fr
+    grid-row-gap: 44px
+    padding: 0 50px
+    +mq($from: desktop)
+      display: grid
+      grid-template-columns: 1fr 1fr 1fr
+      grid-gap: 155px
+
+  &_content_item_image_wrapper
+    position: relative
+    border-radius: 50%
+    margin-bottom: 32px
+    display: flex
+    background-color: rgba($primary, 0.4)
+    width: 100%
+    padding: 22%
+    align-items: center
+
+  &_content_item_image_wrapper_resizer
+    padding-bottom: 100%
+
+  &_content_item_image
+    width: 65%
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+  
 
 .sub_1
   display: flex
