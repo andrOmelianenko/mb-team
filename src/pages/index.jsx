@@ -1,4 +1,10 @@
+import cn from 'classnames';
 import { Contact, Slider, Socials, Button, Typography } from '../components';
+import Image from 'next/image';
+import tacticImg from '../../public/images/tactic.png';
+import thermImg from '../../public/images/therm.png';
+import opticsImg from '../../public/images/optics.png';
+
 import intl from '../intl'; // temp.
 import s from './index.module.sass';
 
@@ -23,29 +29,65 @@ export default () => (
       </Typography>
 
       <div className={s.money_reason_content_block}>
-        <div className={s.money_reason_content_item}>
+        <div>
           <div className={s.money_reason_content_item_image_wrapper}>
-            <img src="" className={s.money_reason_content_item_image} />
+            <div className={s.image_resizer} />
+            <div>
+              <Image
+                src={tacticImg}
+                alt={intl.tactic}
+              />
+            </div>
           </div>
-          <p className={s.money_reason_content_item_text}>
-            {intl.subtitle_0}
-          </p>
+          <Typography
+            align="center"
+            size="18"
+            weight="medium"
+            color="gray_1"
+            className={s.money_reason_content_item_text}
+          >
+            {intl.tactic}
+          </Typography>
         </div>
-        <div className={s.money_reason_content_item}>
+        <div>
           <div className={s.money_reason_content_item_image_wrapper}>
-            <img src="" className={s.money_reason_content_item_image} />
+            <div className={s.image_resizer} />
+            <div>
+              <Image
+                src={thermImg}
+                alt={intl.therm}
+              />
+            </div>
           </div>
-          <p className={s.money_reason_content_item_text}>
-            {intl.subtitle_0}
-          </p>
+          <Typography
+            align="center"
+            size="18"
+            weight="medium"
+            color="gray_1"
+            className={s.money_reason_content_item_text}
+          >
+            {intl.therm}
+          </Typography>
         </div>
-        <div className={s.money_reason_content_item}>
+        <div>
           <div className={s.money_reason_content_item_image_wrapper}>
-            <img src="" className={s.money_reason_content_item_image} />
+            <div className={s.image_resizer} />
+            <div>
+              <Image
+                src={opticsImg}
+                alt={intl.optics}
+              />
+            </div>
           </div>
-          <p className={s.money_reason_content_item_text}>
-            {intl.subtitle_0}
-          </p>
+          <Typography
+            align="center"
+            size="18"
+            weight="medium"
+            color="gray_1"
+            className={s.money_reason_content_item_text}
+          >
+            {intl.optics}
+          </Typography>
         </div>
       </div>
     </section>

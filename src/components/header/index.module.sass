@@ -7,12 +7,29 @@
   top: 0
   display: flex
   justify-content: space-between
+  align-items: center
   height: 48px
   width: 100%
+  padding: 0 10px
   transition: background-color .3s
-
   +mq($from: desktop)
     height: 72px
+    padding: 0 20px
 
 .bg
   background-color: $white
+
+.logo
+  height: 36px
+  path
+    transition: fill .3s
+  +mq($from: desktop)
+    height: 46px
+
+.nav
+  display: flex
+  align-items: center
+  ul
+    display: flex
+    align-items: center
+    list-style: none
