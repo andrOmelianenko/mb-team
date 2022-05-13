@@ -1,9 +1,21 @@
 @import 'theme'
+@import 'mixins'
+
+*
+  box-sizing: border-box
 
 body
   min-width: 320px
   margin: 0
   font-family: 'cera-pro', sans-serif
+  height: 4000px
+
+.container
+  margin: 0 auto
+  max-width: 1024px
+  padding: 56px 20px
+  +mq($from: desktop)
+    padding: 72px 0
 
 // that gray line between sections
 .divider
