@@ -1,7 +1,8 @@
-@import 'mixins'
-@import 'theme'
+@import mixins
+@import theme
 
 .header
+  z-index: 3
   position: fixed
   left: 0
   top: 0
@@ -21,6 +22,7 @@
 
 .logo
   height: 36px
+  cursor: pointer
   path
     transition: fill .3s
   +mq($from: desktop)
@@ -33,3 +35,12 @@
     display: flex
     align-items: center
     list-style: none
+
+.linkstr
+  text-transform: uppercase
+  margin-left: 20px
+  cursor: pointer
+  transition: color .3s
+
+.socials
+  margin: 0 40px

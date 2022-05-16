@@ -3,11 +3,32 @@
 
 .footer
   display: flex
-  justify-content: space-between
-  align-items: center
-  height: 48px
-  padding: 0 10px
+  flex-direction: column
+  align-items: flex-start
+  padding: 20px
   background-color: $gray_1
   +mq($from: desktop)
     height: 72px
     padding: 0 20px
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+
+.links
+  list-style: none
+  display: flex
+  flex-direction: column
+  margin: 16px 0 32px
+  +mq($from: desktop)
+    flex-direction: row
+    flex-grow: 1
+    margin: 0
+  &_item
+    width: fit-content
+    border-bottom: 1px solid $white
+    +mq($from: desktop)
+      margin-left: 32px
+    &:first-child
+      margin-bottom: 12px
+      +mq($from: desktop)
+        margin-bottom: 0

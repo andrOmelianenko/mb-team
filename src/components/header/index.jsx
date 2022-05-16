@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import cn from 'classnames';
 import Logo from './logo';
-import { Lang, Socials } from '..';
+import { Lang, Socials, Typography } from '..';
 import intl from '../../intl'; // temp.
 import s from './index.module.sass';
 
@@ -11,13 +11,15 @@ const Header = ({ withScroll }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const handleSroll = () => {
-    setIsScrolled(window.scrollY > window.innerHeight);
+    setIsScrolled(window.scrollY > window.innerHeight * 0.93);
   };
 
   useEffect(() => {
     if (!withScroll) {
       return;
     }
+
+    handleSroll();
 
     window.addEventListener('scroll', handleSroll);
 
@@ -27,6 +29,7 @@ const Header = ({ withScroll }) => {
   }, [withScroll]);
 
   const isFilled = !withScroll || isScrolled;
+  const color = isFilled ? 'gray_1' : 'white';
 
   return (
     <header className={cn(s.header, { [s.bg]: isFilled })}>
@@ -39,13 +42,21 @@ const Header = ({ withScroll }) => {
       <nav className={s.nav}>
         <ul>
           <li>
-            <Link href="/contribute">{intl.contribute_cta}</Link>
+            <Link href="/contribute" passHref>
+              <Typography weight="bold" color={color} className={s.linkstr}>
+                {intl.contribute_cta}
+              </Typography>
+            </Link>
           </li>
           <li>
-            <Link href="/contacts">{intl.contacts}</Link>
+            <Link href="/contacts" passHref>
+              <Typography weight="bold" color={color} className={s.linkstr}>
+                {intl.contacts}
+              </Typography>
+            </Link>
           </li>
         </ul>
-        <Socials />
+        <Socials color={color} className={s.socials} />
         <Lang />
       </nav>
     </header>

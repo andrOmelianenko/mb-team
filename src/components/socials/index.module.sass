@@ -1,0 +1,26 @@
+@import theme
+
+.wrapper
+  display: flex
+
+.fb
+  width: 20px
+  margin-right: 16px
+
+.inst
+  width: 24px
+
+.svg
+  cursor: pointer
+  path
+    transition: fill .3s
+
+.gray_1
+  @extend .svg
+  path
+    fill: $gray_1
+
+.white
+  @extend .svg
+  path
+    fill: $white
