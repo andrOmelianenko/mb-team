@@ -6,32 +6,25 @@ import tacticImg from '../../public/images/tactic.png';
 import thermImg from '../../public/images/therm.png';
 import opticsImg from '../../public/images/optics.png';
 import { Cart, Delivery, Parcel, Report } from '../assets/svg';
-
 import intl from '../intl'; // temp.
 import s from './index.module.sass';
 
-const renderSub0Item = ({ src, text }) => (
-  <div key={text}>
+const renderSub0Item = ({ src, str }) => (
+  <div key={str}>
     <div className={s.sub_0_content_item_image_wrapper}>
       <div className={s.sub_0_content_item_image_wrapper_resizer} />
       <div className={s.sub_0_content_item_image}>
-        <Image src={src} alt={text} />
+        <Image src={src} alt={str} />
       </div>
     </div>
-    <Typography
-      align="center"
-      size="18"
-      weight="medium"
-      color="gray_1"
-      className={s.sub_0_content_item_text}
-    >
-      {text}
+    <Typography align="center" size="18" weight="medium" color="gray_1">
+      {str}
     </Typography>
   </div>
 );
 
-const renderSub1Item = ({ Icon, text_0, text_1 }) => (
-  <div key={text_0} className={s.sub_1_item}>
+const renderSub1Item = ({ Icon, str_0, str_1 }) => (
+  <div key={str_0} className={s.sub_1_item}>
     <div className={s.sub_1_bg}>
       <Icon />
     </div>
@@ -42,10 +35,27 @@ const renderSub1Item = ({ Icon, text_0, text_1 }) => (
       color="gray_1"
       className={s.sub_1_title}
     >
-      {text_0}
+      {str_0}
     </Typography>
-    <Typography align="center" size="14" color="gray_3">
-      {text_1}
+    <Typography align="center" size="15" color="gray_3">
+      {str_1}
+    </Typography>
+  </div>
+);
+
+const renderSub3Item = ({ str_0, str_1 }) => (
+  <div key={str_0}>
+    <Typography
+      align="center"
+      size="42"
+      weight="bold"
+      color="gray_1"
+      className={s.sub_3_item_count}
+    >
+      {str_0}
+    </Typography>
+    <Typography align="center" size="15" color="gray_3">
+      {str_1}
     </Typography>
   </div>
 );
@@ -54,38 +64,53 @@ export default () => {
   const sub0 = [
     {
       src: tacticImg,
-      text: intl.tactic,
+      str: intl.tactic,
     },
     {
       src: thermImg,
-      text: intl.therm,
+      str: intl.therm,
     },
     {
       src: opticsImg,
-      text: intl.optics,
+      str: intl.optics,
     },
   ];
 
   const sub1 = [
     {
       Icon: Cart,
-      text_0: intl.cart,
-      text_1: intl.cart_sub,
+      str_0: intl.cart,
+      str_1: intl.cart_sub,
     },
     {
       Icon: Delivery,
-      text_0: intl.delivery,
-      text_1: intl.delivery_sub,
+      str_0: intl.delivery,
+      str_1: intl.delivery_sub,
     },
     {
       Icon: Parcel,
-      text_0: intl.parcel,
-      text_1: intl.parcel_sub,
+      str_0: intl.parcel,
+      str_1: intl.parcel_sub,
     },
     {
       Icon: Report,
-      text_0: intl.report,
-      text_1: intl.report_sub,
+      str_0: intl.report,
+      str_1: intl.report_sub,
+    },
+  ];
+
+  const sub3 = [
+    {
+      str_0: intl.therm_count,
+      str_1: intl.therm_count_sub,
+    },
+    {
+      str_0: intl.tech_count,
+      str_1: intl.tech_count_sub,
+    },
+    {
+      str_0: intl.tactic_count,
+      str_1: intl.tactic_count_sub,
     },
   ];
 
@@ -132,6 +157,24 @@ export default () => {
         <Slider />
         {intl.slider_sub}
         <Socials />
+      </section>
+      <hr className="divider" />
+      <section className={cn(s.sub_3, 'container')}>
+        <Typography {...headingProps}>{intl.subtitle_3}</Typography>
+        <div className={s.sub_3_amount}>
+          <Typography
+            size="56"
+            weight="bold"
+            color="gray_1"
+            className={s.sub_3_amount_counter}
+          >
+            {intl.amount}
+          </Typography>
+          <Typography size="18" weight="medium" color="gray_3">
+            {intl.amount_sub}
+          </Typography>
+        </div>
+        <div className={s.sub_3_content}>{sub3.map(renderSub3Item)}</div>
       </section>
       <hr className="divider" />
       <Contact />

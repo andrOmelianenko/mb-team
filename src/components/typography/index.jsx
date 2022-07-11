@@ -8,7 +8,7 @@ const Typography = ({
   color,
   size,
   weight,
-  component:  Component,
+  component: Component,
   align,
   children,
   ...other
@@ -32,8 +32,8 @@ const Typography = ({
 Typography.propTypes = {
   className: PropTypes.string,
   color: PropTypes.oneOf(['black', 'white', 'gray_1', 'gray_3', 'gray_3']),
-  size: PropTypes.oneOf(['14', '16', '18', '24', '32', '48']),
-  weight: PropTypes.oneOf(['normal', 'medium', 'bold']),
+  size: PropTypes.oneOf(['14', '15', '16', '18', '24', '32', '42', '48', '56']),
+  weight: PropTypes.oneOf(['regular', 'medium', 'bold']),
   component: PropTypes.oneOf(['p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
   align: PropTypes.oneOf(['left', 'center', 'right']),
   children: PropTypes.node,
@@ -43,11 +43,10 @@ Typography.defaultProps = {
   className: '',
   color: 'black',
   size: '14',
-  weight: 'normal',
+  weight: 'regular',
   component: 'p',
   align: 'left',
   children: null,
 };
-
 
 export default Typography;

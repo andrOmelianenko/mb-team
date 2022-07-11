@@ -76,3 +76,26 @@
 
 .sub_2
   // display: flex
+
+.sub_3
+  &_amount
+    display: flex
+    align-items: center
+    height: 238px
+    padding: 0 175px 0 88px
+    margin-bottom: 56px
+    border-radius: 12px
+    background-color: rgba($primary, 0.4)
+  &_amount_counter
+    flex-shrink: 0
+    margin-right: 180px
+  &_content
+    display: grid
+    grid-template-columns: 1fr
+    grid-row-gap: 32px
+    +mq($from: tablet)
+      grid-template-columns: 1fr 1fr 1fr
+      grid-gap: 160px
+      padding: 0 80px
+  &_item_count
+    margin-bottom: 15px
