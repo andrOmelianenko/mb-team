@@ -1,0 +1,33 @@
+@import 'theme'
+@import 'mixins'
+
+.slider
+  div[class="carousel-track"]
+    overflow: hidden
+  div[class*="carousel-initialized"]
+    overflow: visible
+    +mq($from: tablet)
+      padding: 0 85px !important
+  div[class*="carousel-prev"],
+  div[class*="carousel-next"]
+    display: none
+    width: 56px
+    height: 56px
+    z-index: 1
+    top: 50%
+    transform: translateY(-50%)
+    border-radius: 50%
+    background-color: $primary
+    svg
+      width: 15px
+    +mq($from: tablet)
+      display: flex
+
+.prev
+  transform: rotate(90deg)
+
+.next
+  transform: rotate(-90deg)
+
+.slide
+  padding: 0 12px
