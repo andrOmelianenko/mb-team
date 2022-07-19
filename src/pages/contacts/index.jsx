@@ -1,4 +1,3 @@
-// import cn from 'classnames';
 import { Contact, Typography, Socials, Button } from '../../components';
 import { Messenger, Telegram } from '../../assets/svg';
 import intl from '../../intl'; // temp.

@@ -155,8 +155,12 @@ export default () => {
       <section className={cn(s.sub_2, 'container')}>
         <Typography {...headingProps}>{intl.subtitle_2}</Typography>
         <Slider />
-        {intl.slider_sub}
-        <Socials />
+        <div className={s.sub_2_bottom}>
+          <Typography size="15" color="gray_3">
+            {intl.slider_sub}
+          </Typography>
+          <Socials className={s.sub_2_socials} />
+        </div>
       </section>
       <hr className="divider" />
       <section className={cn(s.sub_3, 'container')}>
@@ -170,7 +174,12 @@ export default () => {
           >
             {intl.amount}
           </Typography>
-          <Typography size="18" weight="medium" color="gray_3">
+          <Typography
+            size="18"
+            weight="medium"
+            color="gray_3"
+            className={s.sub_3_amount_sub}
+          >
             {intl.amount_sub}
           </Typography>
         </div>

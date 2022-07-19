@@ -32,12 +32,16 @@
   &_content_item_image_wrapper
     position: relative
     border-radius: 50%
-    margin-bottom: 32px
     display: flex
     background-color: rgba($primary, 0.4)
     width: 100%
+    max-width: 250px
     padding: 22%
     align-items: center
+    margin: 0 auto 32px
+    +mq($from: desktop)
+      margin-bottom: 32px
+      max-width: auto
   &_content_item_image_wrapper_resizer
     padding-bottom: 100%
   &_content_item_image
@@ -75,25 +79,41 @@
     margin: 24px 0 12px
 
 .sub_2
-  // display: flex
+  &_bottom
+    margin-top: 50px
+    display: flex
+    align-items: center
+    justify-content: center
+  &_socials
+    margin-left: 34px
 
 .sub_3
   &_amount
     display: flex
+    flex-direction: column
     align-items: center
+    justify-content: space-around
     height: 238px
-    padding: 0 175px 0 88px
+    padding: 40px
     margin-bottom: 56px
     border-radius: 12px
     background-color: rgba($primary, 0.4)
+    +mq($from: desktop)
+      flex-direction: row
+      padding: 0 175px 0 88px
   &_amount_counter
-    flex-shrink: 0
-    margin-right: 180px
+    +mq($from: desktop)
+      flex-shrink: 0
+      margin-right: 180px
+  &_amount_sub
+    text-align: center
+    +mq($from: desktop)
+      text-align: left
   &_content
     display: grid
     grid-template-columns: 1fr
     grid-row-gap: 32px
-    +mq($from: tablet)
+    +mq($from: desktop)
       grid-template-columns: 1fr 1fr 1fr
       grid-gap: 160px
       padding: 0 80px

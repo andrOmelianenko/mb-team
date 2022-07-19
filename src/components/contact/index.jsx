@@ -28,8 +28,10 @@ const Contact = () => (
       <Typography size="18" weight="medium" className={s.right_txt}>
         {intl.contact_txt_1}
       </Typography>
-      <Typography color="gray_3">{intl.share}</Typography>
-      <Socials />
+      <div className={s.right_share}>
+        <Typography color="gray_3">{intl.share}</Typography>
+        <Socials className={s.right_socials} />
+      </div>
     </div>
   </section>
 );
