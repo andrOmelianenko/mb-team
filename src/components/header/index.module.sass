@@ -29,18 +29,80 @@
     height: 46px
 
 .nav
+  position: fixed
+  z-index: 1
+  top: -100%
+  left: 0
+  width: 100%
+  padding: 24px
   display: flex
-  align-items: center
+  flex-direction: column
+  align-items: flex-start
+  background-color: $white
+  transition: top .3s
+  +mq($from: tablet)
+    position: relative
+    top: 0
+    width: auto
+    padding: 0
+    flex-direction: row
+    align-items: center
+    background-color: transparent
   ul
     display: flex
-    align-items: center
+    flex-direction: column
+    align-items: flex-start
     list-style: none
+    li:first-child
+      margin-bottom: 20px
+    +mq($from: tablet)
+      flex-direction: row
+      align-items: center
+      li:first-child
+        margin-bottom: 0
+  &_mob_open
+    top: 0
 
 .linkstr
   text-transform: uppercase
-  margin-left: 20px
   cursor: pointer
   transition: color .3s
+  +mq($from: tablet)
+    margin-left: 20px
 
 .socials
-  margin: 0 40px
+  margin: 45px 0 40px
+  +mq($from: tablet)
+    margin: 0 40px
+
+.burger
+  z-index: 2
+  display: block
+  width: 18px
+  height: 18px
+  label
+    position: relative
+    display: block
+    height: 100%
+  +mq($from: tablet)
+    display: none
+
+.icon
+  position: absolute
+  width: 18px
+  opacity: 1
+  cursor: pointer
+  transition: opacity .3s
+  path
+    transition: stroke .3s
+
+.hide
+  opacity: 0
+
+.gray_1
+  path
+    stroke: $gray_1
+
+.white
+  path
+    stroke: $white

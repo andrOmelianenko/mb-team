@@ -8,8 +8,9 @@ import FB from './fb.svg';
 import Inst from './inst.svg';
 import Telegram from './telegram.svg';
 import Messenger from './messenger.svg';
+import Burger from './burger.svg';
+import Cross from './cross.svg';
 
-// which way to deal with svgs?
 export {
   Arrow,
   Cart,
@@ -21,4 +22,6 @@ export {
   Inst,
   Telegram,
   Messenger,
+  Burger,
+  Cross
 };
