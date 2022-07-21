@@ -2,6 +2,9 @@
 
 export default {
   // langs
+  lang_ua_short: 'укр',
+  lang_en_short: 'en',
+  lang_pl_short: 'pl',
   lang_ua: 'українська',
   lang_en: 'english',
   lang_pl: 'polska',

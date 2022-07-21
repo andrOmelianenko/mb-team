@@ -1,0 +1,60 @@
+@import theme
+@import mixins
+
+.label
+  display: flex
+  align-items: center
+  height: 32px
+  padding: 0
+  border-radius: 8px
+  cursor: pointer
+  transition: background-color .3s
+  +mq($from: tablet)
+    padding: 0 10px 0 8px
+  svg
+    width: 12px
+    path
+      transition: fill .3s
+  &_str
+    margin-right: 8px
+    user-select: none
+    text-transform: uppercase
+    transition: color .3s
+  &_open
+    background-color: $gray_5
+    svg
+      path
+        fill: $gray_1
+    .label_str
+      color: $gray_1
+
+.gray_1
+  path
+    fill: $gray_1
+
+.white
+  path
+    fill: $white
+
+.list
+  position: absolute
+  user-select: none
+  top: 56px
+  right: -200px
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: flex-start
+  padding: 12px 60px 12px 12px
+  border: 1px solid $gray_5
+  border-radius: 8px
+  background-color: $white
+  transition: right .3s
+  &_open
+    right: 0 // TODO: upd animation
+  &_item
+    margin-bottom: 16px
+    text-transform: uppercase
+    cursor: pointer
+    &:last-child
+      margin-bottom: 0
