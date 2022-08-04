@@ -7,7 +7,11 @@ const Footer = () => (
     <Typography color="white">{intl.mb_team}</Typography>
     <ul className={s.links}>
       <li className={s.links_item}>
-        <Typography color="white">{intl.docs}</Typography>
+        <Typography color="white">
+          <a href="/pdf/docs.pdf" target="_blank">
+            {intl.docs}
+          </a>
+        </Typography>
       </li>
       <li className={s.links_item}>
         <Typography color="white">{intl.info}</Typography>
