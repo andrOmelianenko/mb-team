@@ -1,7 +1,9 @@
+import { Fragment } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import cn from 'classnames';
 import { Contact, Slider, Socials, Button, Typography } from '../components';
-import Image from 'next/image';
+import { FB_LINK, IG_LINK } from '../constants';
 import tacticImg from '../../public/images/tactic.png';
 import thermImg from '../../public/images/therm.png';
 import opticsImg from '../../public/images/optics.png';
@@ -60,6 +62,22 @@ const renderSub3Item = ({ str_0, str_1 }) => (
   </div>
 );
 
+const renderSub4Item = ({ str_0, str_1 }) => (
+  <Fragment key={str_0}>
+    <Typography
+      size="18"
+      color="gray_1"
+      weight="bold"
+      className={s.sub_4_item_0}
+    >
+      {str_0}
+    </Typography>
+    <Typography size="16" color="gray_3" className={s.sub_4_item_1}>
+      {str_1}
+    </Typography>
+  </Fragment>
+);
+
 export default () => {
   const sub0 = [
     {
@@ -111,6 +129,49 @@ export default () => {
     {
       str_0: intl.tactic_count,
       str_1: intl.tactic_count_sub,
+    },
+  ];
+
+  const linkProps = {
+    target: '_blank',
+    rel: 'noreferrer',
+  };
+
+  const sub4 = [
+    {
+      str_0: intl.faq_0,
+      str_1: intl.faq_0_sub,
+    },
+    {
+      str_0: intl.faq_1,
+      str_1: (
+        <>
+          {intl.faq_1_sub_0}&nbsp;
+          <a href={IG_LINK} {...linkProps}>
+            Instagram
+          </a>
+          &nbsp;
+          {intl.faq_1_sub_1}&nbsp;
+          <a href={FB_LINK} {...linkProps}>
+            Facebook
+          </a>
+          &nbsp;
+          {intl.faq_1_sub_2}
+        </>
+      ),
+    },
+    {
+      str_0: intl.faq_2,
+      str_1: (
+        <>
+          {intl.faq_2_sub_0}&nbsp;
+          <Link href="/contacts" passHref>
+            {intl.faq_2_sub_link}
+          </Link>
+          &nbsp;
+          {intl.faq_2_sub_1}
+        </>
+      ),
     },
   ];
 
@@ -184,6 +245,11 @@ export default () => {
           </Typography>
         </div>
         <div className={s.sub_3_content}>{sub3.map(renderSub3Item)}</div>
+      </section>
+      <hr className="divider" />
+      <section className={cn(s.sub_4, 'container')}>
+        <Typography {...headingProps}>{intl.subtitle_4}</Typography>
+        <div className={s.sub_4_content}>{sub4.map(renderSub4Item)}</div>
       </section>
       <hr className="divider" />
       <Contact />

@@ -31,7 +31,7 @@ const Typography = ({
 
 Typography.propTypes = {
   className: PropTypes.string,
-  color: PropTypes.oneOf(['black', 'white', 'gray_1', 'gray_3', 'gray_3']),
+  color: PropTypes.oneOf(['black', 'white', 'gray_1', 'gray_2', 'gray_3']),
   size: PropTypes.oneOf(['14', '15', '16', '18', '24', '32', '42', '48', '56']),
   weight: PropTypes.oneOf(['regular', 'medium', 'bold']),
   component: PropTypes.oneOf(['p', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
